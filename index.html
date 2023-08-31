@@ -6,11 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahan Mirza Khanlari</title>
     <style>
-        /* Adding the beige gradient background */
         body {
             background: linear-gradient(to bottom, #F5DEB3, #FFE4B5);
-            font-family: Arial, sans-serif; /* for better typography */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            color: #FFF;
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+
     </style>
 </head>
 
@@ -18,35 +64,55 @@
     <header>
         <h1>Mahan Mirza Khanlari</h1>
         <nav>
-            <p>
-                Astronomy & Physics Undergraduate at University of Texas at Austin | 
-                Undergraduate researcher in <a href="https://hetdex.org/" target="_blank">HETDEX</a>.
-            </p>
             <ul>
-                <li><a href="docs/CV.pdf" target="_blank"> CV</a></li>
+                <li><a href="docs/CV.pdf" target="_blank">CV</a></li>
                 <li><a href="https://github.com/mahanmkh" target="_blank">GitHub</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="interests">
-        <h2>Research Interests</h2>
-        <p>Observational Cosmology, Circumgalactic Medium & Intergalactic Medium, The Cosmic Web ,Machine learning with big data, Evolution of high redshift galaxies, Lyman Alpha Forest</p>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Astronomy & Physics Undergraduate at University of Texas at Austin. An innate curiosity for grasping the complexities of the universe naturally drew me to observational cosmology. Under the mentorship of Dr. Karl Gebhardt, I've delved deep into this field, researching extensively and contributing to the broader understanding of our cosmos.
+        </p>
     </section>
 
-    <section id="contact">
-        <h2>Projects</h2>
-        <p>Machine Learning Applications in HETDEX; Removing Artifact Detections from the Catalogs. <a href="https://github.com/mahanmkh/Machine-Learning-in-HETDEX" target="_blank">Learn more</a></p>
-        <p>Probing High Density HI Regions Through Lyman Alpha Absorption. <a href="https://github.com/mahanmkh/Lyman-Alpha-Absorption-in-HETDEX" target="_blank">Learn more</a></p>
+    <section id="interests">
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Observational Cosmology</li>
+            <li>Circumgalactic Medium & Intergalactic Medium</li>
+            <li>The Cosmic Web</li>
+            <li>Machine learning with big data</li>
+            <li>Evolution of high redshift galaxies</li>
+            <li>Lyman Alpha Forest</li>
+        </ul>
+    </section>
+
+    <section id="Projects">
+        <h2>My Work</h2>
+        <article>
+            <h3>Machine Learning Applications in HETDEX</h3>
+            <p>Removing Artifact Detections from the Catalogs. <a href="https://github.com/mahanmkh/Machine-Learning-in-HETDEX" target="_blank">Learn more</a></p>
+        </article>
+        <article>
+            <h3>Probing High Density HI Regions</h3>
+            <p>Through Lyman Alpha Absorption. <a href="https://github.com/mahanmkh/Lyman-Alpha-Absorption-in-HETDEX" target="_blank">Learn more</a></p>
+        </article>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p><a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a></p>
+        <p>Interested in collaborating or have any inquiries? Reach out at <a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a> or use the contact form (to be implemented).</p>
     </section>
 
     <footer>
         <p>&copy; 2023 All Rights Reserved.</p>
+        <div>
+            <a href="docs/CV.pdf" target="_blank">CV</a> | 
+            <a href="mailto:mahanmkh@utexas.edu">Contact</a>
+        </div>
     </footer>
 </body>
 
