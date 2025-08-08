@@ -2,104 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <title>Mahan Mirza Khanlari</title>
-    <style>
-        body {
-            background: #323232;
-            color: #fbfbfb;
-            font-family: 'Lora', serif;
-            margin: 1vh calc(1vw + 1rem);
-        }
-
-        a {
-            color: #fb4934;
-        }
-
-        .flex {
-            display: flex;
-            align-items: start;
-            justify-content: space-between;
-        }
-
-        main {
-            max-width: 100ch;
-            /* flex-shrink: 0; */
-        }
-
-        img {
-            width: 300px;
-            aspect-ratio: 1/1;
-            object-fit: contain;
-        }
-
-        @media (max-width: 720px) {
-            img {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Mahan Mirza Khanlari</title>
+  <meta name="description" content="Mahan Mirza Khanlari — second-year astronomy graduate student at UT Austin. HETDEX collaboration. CGM/IGM and LAE studies." />
+  <style>
+    :root { --bg:#323232; --fg:#fbfbfb; --accent:#fb4934; }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Lora', serif;
+      margin: 1vh calc(1vw + 1rem);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); }
+    a[target="_blank"] { text-decoration: none; border-bottom: 1px dashed var(--accent); }
+    .flex { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; }
+    main { max-width: 100ch; }
+    header h1 { margin-bottom: .25rem; }
+    nav p { margin: .25rem 0 0 0; }
+    nav ul { list-style: none; padding: 0; margin: .5rem 0 0 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+    section { margin-top: 1rem; }
+    #projects p, #publications li { margin: .5rem 0; }
+    #publications ul { padding-left: 1.25rem; }
+    img {
+      width: 300px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    footer { margin-top: 2rem; opacity: 0.8; font-size: .95rem; }
+    @media (max-width: 720px) {
+      img { display: none; }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="flex">
-        <main>
-            <header>
-                <h1>Mahan Mirza Khanlari</h1>
-                <nav>
-                    <p>
-                        Astronomy graduate student at University of Texas at Austin |
-                         <a href="https://hetdex.org/" target="_blank">HETDEX</a>.
-                    </p>
-                    <ul>
-                        <li><a href="docs/CV.pdf" target="_blank"> Curriculum Vitae</a></li>
-                        <li><a href="https://github.com/mahanmkh" target="_blank">GitHub</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <br>
-            <section id="interests">
-                <h2>FIELD INTERESTS</h2>
-                <p>Circumgalactic Medium & Intergalactic Medium, The Cosmic Web, Evolution of high redshift galaxies, Lyman Alpha Forest, Machine
-                    learning with big data</p>
-            </section>
-            <br>
-            <section id="Projects">
-                <h2>PROJECTS</h2>
-                <p>Probing neutral hydrogen in the circumgalactic medium of Lyman Alpha Emitters in HETDEX.
-                    <a href="docs/HETDEX-Meeting-2024.pdf" target="_blank">Learn more</a>
-                    <a href="docs/AAS243 Poster.pdf" target="_blank">AAS 243 Poster</a></p>
-                <p>Removing False Detection Emission Lines in HETDEX through Dimensionality Reduction and Visualization.  
-                    <a href="docs/BoV.pdf" target="_blank">Learn more</a></p>
-            
-            </section>
-            <br>
-            
-            <section id="publications">
-                <h2>PUBLICATIONS</h2>
-                <p>Probing neutral hydrogen in the circumgalactic medium of Lyman Alpha Emitters in HETDEX - Mahan Mirza Khanlari et al 2024 Submitted</p>
-                <p>Absorption Troughs of Lyα Emitters in HETDEX, Laurel H. Weiss et al 2024 ApJ 962 102</p>
-            </section>
+  <div class="flex">
+    <main>
+      <header>
+        <h1>Mahan Mirza Khanlari</h1>
+        <nav>
+          <p>
+            Second-year astronomy graduate student at
+            <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer">The University of Texas at Austin</a> |
+            <a href="https://hetdex.org/" target="_blank" rel="noopener noreferrer">HETDEX</a>
+          </p>
+          <ul>
+            <li><a href="docs/CV.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a></li>
+            <li><a href="https://github.com/mahanmkh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </nav>
+      </header>
 
-                
-            </section>
-            <br>
-            <section id="contact">
-                <h2>Contact</h2>
-                <p><a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a></p>
-            </section>
+      <section id="projects">
+        <h2>PROJECTS</h2>
+        <p>
+          Probing neutral hydrogen in the circumgalactic medium of Lyman Alpha Emitters in HETDEX.
+          <a href="docs/HETDEX-Meeting-2024.pdf" target="_blank" rel="noopener noreferrer">Learn more</a>
+          <a href="docs/AAS243 Poster.pdf" target="_blank" rel="noopener noreferrer">AAS 243 Poster</a>
+        </p>
+        <p>
+          Removing False Detection Emission Lines in HETDEX through Dimensionality Reduction and Visualization.
+          <a href="docs/BoV.pdf" target="_blank" rel="noopener noreferrer">Learn more</a>
+        </p>
+      </section>
 
-            <footer>
-                <p>&copy; 2024 All Rights Reserved.</p>
-            </footer>
-        </main>
-        <img src="docs/photo2.jpeg" alt="me">
-    </div>
+      <section id="publications">
+        <h2>PUBLICATIONS</h2>
+        <ul>
+          <li>
+            <em>The HETDEX Survey: Probing Neutral Hydrogen in the Circumgalactic Medium of &sim;88,000 Lyman Alpha Emitters</em> — M. M. Khanlari et&nbsp;al.
+            <strong>ApJ</strong>, accepted (in press), 2025.
+            DOI: <a href="https://doi.org/10.3847/1538-4357/adf10e" target="_blank" rel="noopener noreferrer">10.3847/1538-4357/adf10e</a>.
+            Preprint: <a href="https://arxiv.org/abs/2507.15942" target="_blank" rel="noopener noreferrer">arXiv:2507.15942</a>.
+          </li>
 
+          <li>
+            <em>Using Lyα Absorption to Measure the Intensity and Variability of z &sim; 2.4 Ultraviolet Background Light</em> — L. H. Weiss et&nbsp;al. (incl. M. M. Khanlari),
+            <strong>ApJ</strong> <strong>983</strong>, 72 (2025), published April 8, 2025.
+            DOI: <a href="https://doi.org/10.3847/1538-4357/adc0f9" target="_blank" rel="noopener noreferrer">10.3847/1538-4357/adc0f9</a>.
+            Preprint: <a href="https://arxiv.org/abs/2504.13253" target="_blank" rel="noopener noreferrer">arXiv:2504.13253</a>.
+          </li>
+
+          <li>
+            <em>Absorption Troughs of Lyα Emitters in HETDEX</em> — L. H. Weiss et&nbsp;al. (incl. M. M. Khanlari),
+            <strong>ApJ</strong> <strong>962</strong>, 102 (2024).
+            DOI: <a href="https://doi.org/10.3847/1538-4357/ad1b51" target="_blank" rel="noopener noreferrer">10.3847/1538-4357/ad1b51</a>.
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p><a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a></p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 All Rights Reserved.</p>
+      </footer>
+    </main>
+
+    <img src="docs/photo2.jpeg" alt="Photo of Mahan Mirza Khanlari" />
+  </div>
 </body>
-
 </html>
