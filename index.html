@@ -4,365 +4,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap"
-    rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
   <title>Mahan Mirza Khanlari</title>
-  <meta name="description"
-    content="Mahan Mirza Khanlari — second-year astronomy graduate student at UT Austin. HETDEX collaboration. CGM/IGM and LAE studies." />
-
+  <meta name="description" content="Mahan Mirza Khanlari — second-year astronomy graduate student at UT Austin. HETDEX collaboration. CGM/IGM and LAE studies." />
   <style>
-    :root {
-      /* Palette */
-      --bg0: #070A14;
-      --bg1: #0B1224;
-      --card: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.12);
-
-      --fg0: rgba(255, 255, 255, 0.92);
-      --fg1: rgba(255, 255, 255, 0.78);
-      --muted: rgba(255, 255, 255, 0.62);
-
-      --accent: #7DD3FC;
-      --accent2: #A78BFA;
-
-      --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
-      --radius: 18px;
-
-      --maxw: 1100px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
+    :root { --bg:#323232; --fg:#fbfbfb; --accent:#fb4934; }
+    * { box-sizing: border-box; }
     body {
-      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Lora', serif;
+      margin: 1vh calc(1vw + 1rem);
+      line-height: 1.5;
     }
-
-    body {
-      margin: 0;
-      color: var(--fg0);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.55;
-      background:
-        radial-gradient(900px 520px at 18% 12%, rgba(167, 139, 250, 0.18), transparent 60%),
-        radial-gradient(700px 420px at 82% 18%, rgba(125, 211, 252, 0.14), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x: hidden;
-    }
-
-    /* subtle grid grain */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 42px 42px;
-      opacity: 0.12;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-      border-radius: 10px;
-    }
-
-    a[target="_blank"] {
-      border-bottom: 1px dashed rgba(125, 211, 252, 0.45);
-      text-decoration: none;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 34px 20px 56px;
-      position: relative;
-    }
-
-    .flex {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    main {
-      max-width: 100ch;
-    }
-
-    /* Main panel */
-    .panel {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .panel::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(90deg, rgba(125, 211, 252, 0.55), rgba(167, 139, 250, 0.45));
-      opacity: 0.18;
-      filter: blur(18px);
-      z-index: 0;
-    }
-
-    .panel-inner {
-      position: relative;
-      z-index: 1;
-      padding: 22px 22px 20px;
-    }
-
-    header h1 {
-      font-family: Fraunces, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin: 6px 0 10px;
-      font-size: clamp(2.0rem, 3.6vw, 3.0rem);
-    }
-
-    nav p {
-      margin: 0.25rem 0 0 0;
-      color: var(--fg1);
-      font-size: 1.02rem;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.8rem 0 0 0;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    nav ul a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--fg0);
-      font-weight: 600;
-      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-    }
-
-    nav ul a:hover {
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-1px);
-    }
-
-    nav ul a:focus-visible {
-      outline: 2px solid var(--accent2);
-      outline-offset: 3px;
-    }
-
-    section {
-      margin-top: 1rem;
-    }
-
-    section h2 {
-      font-family: Fraunces, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      font-size: 1.5rem;
-      margin: 0 0 10px;
-    }
-
-    /* Publications list */
-    #publications ul {
-      padding-left: 1.15rem;
-      margin: 0;
-      color: var(--fg1);
-    }
-
-    #publications li {
-      margin: 0.8rem 0;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    #publications em {
-      color: var(--fg0);
-      font-style: italic;
-    }
-
-    #publications strong {
-      color: var(--fg0);
-      font-weight: 700;
-    }
-
-    /* Contact */
-    #contact p {
-      margin: 0.6rem 0 0;
-      font-size: 1.02rem;
-      color: var(--fg1);
-    }
-
-    /* Right-side photo card */
-    .photo-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: sticky;
-      top: 18px;
-    }
-
+    a { color: var(--accent); }
+    a[target="_blank"] { text-decoration: none; border-bottom: 1px dashed var(--accent); }
+    .flex { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; }
+    main { max-width: 100ch; }
+    header h1 { margin-bottom: .25rem; }
+    nav p { margin: .25rem 0 0 0; }
+    nav ul { list-style: none; padding: 0; margin: .5rem 0 0 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+    section { margin-top: 1rem; }
+    #projects p, #publications li { margin: .5rem 0; }
+    #publications ul { padding-left: 1.25rem; }
     img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border-radius: 0;
+      width: 300px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      border-radius: 8px;
     }
-
-    .photo-cap {
-      padding: 14px 16px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(0, 0, 0, 0.16);
-    }
-
-    footer {
-      margin-top: 1.6rem;
-      opacity: 0.9;
-      font-size: 0.95rem;
-      color: var(--muted);
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    /* Responsive */
-    @media (max-width: 920px) {
-      .flex {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-card {
-        position: static;
-      }
-
-      img {
-        aspect-ratio: 16 / 10;
-      }
-    }
-
+    footer { margin-top: 2rem; opacity: 0.8; font-size: .95rem; }
     @media (max-width: 720px) {
-      img {
-        display: none;
-      }
-
-      .photo-cap {
-        display: none;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      nav ul a {
-        transition: none !important;
-      }
+      img { display: none; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="flex">
-      <main class="panel">
-        <div class="panel-inner">
-          <header>
-            <h1>Mahan Mirza Khanlari</h1>
-            <nav>
-              <p>
-                Second-year astronomy graduate student at
-                <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer">The University of Texas at
-                  Austin</a> |
-                <a href="https://hetdex.org/" target="_blank" rel="noopener noreferrer">HETDEX</a>
-              </p>
-              <ul>
-                <li><a href="docs/CV.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a></li>
-                <li><a href="https://github.com/mahanmkh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              </ul>
-            </nav>
-          </header>
+  <div class="flex">
+    <main>
+      <header>
+        <h1>Mahan Mirza Khanlari</h1>
+        <nav>
+          <p>
+            Second-year astronomy graduate student at
+            <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer">The University of Texas at Austin</a> |
+            <a href="https://hetdex.org/" target="_blank" rel="noopener noreferrer">HETDEX</a>
+          </p>
+          <ul>
+            <li><a href="docs/CV.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a></li>
+            <li><a href="https://github.com/mahanmkh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </nav>
+      </header>
 
-          <section id="publications">
-            <h2>PUBLICATIONS</h2>
-            <ul>
-              <li>
-                <em>The HETDEX Survey: Probing Neutral Hydrogen in the Circumgalactic Medium of &sim;88,000 Lyman Alpha
-                  Emitters</em> — M. Mirza Khanlari et&nbsp;al 2025.
-                <strong>ApJ</strong> <strong>989</strong>, 169.
-                DOI: <a href="https://doi.org/10.3847/1538-4357/adf10e" target="_blank"
-                  rel="noopener noreferrer">10.3847/1538-4357/adf10e</a>.
-              </li>
+      <section id="publications">
+        <h2>PUBLICATIONS</h2>
+        <ul>
+          <li>
+            <em>The HETDEX Survey: Probing Neutral Hydrogen in the Circumgalactic Medium of &sim;88,000 Lyman Alpha Emitters</em> — M. Mirza Khanlari et&nbsp;al 2025.
+            <strong>ApJ</strong> <strong>989</strong>, 169.
+             DOI: <a href="https://doi.org/10.3847/1538-4357/adf10e" target="_blank" rel="noopener noreferrer">10.3847/1538-4357/adf10e</a>.
+          </li>
 
-              <li>
-                <em>Using Lyα Absorption to Measure the Intensity and Variability of z &sim; 2.4 Ultraviolet Background
-                  Light</em> — L. H. Weiss et&nbsp;al. 2025,
-                <strong>ApJ</strong> <strong>983</strong>, 72.
-                DOI: <a href="https://doi.org/10.3847/1538-4357/adc0f9" target="_blank"
-                  rel="noopener noreferrer">10.3847/1538-4357/adc0f9</a>.
-              </li>
+          <li>
+            <em>Using Lyα Absorption to Measure the Intensity and Variability of z &sim; 2.4 Ultraviolet Background Light</em> — L. H. Weiss et&nbsp;al. 2025,
+            <strong>ApJ</strong> <strong>983</strong>, 72.
+            DOI: <a href="https://doi.org/10.3847/1538-4357/adc0f9" target="_blank" rel="noopener noreferrer">10.3847/1538-4357/adc0f9</a>.
+          </li>
 
-              <li>
-                <em>Absorption Troughs of Lyα Emitters in HETDEX</em> — L. H. Weiss et&nbsp;al. 2024,
-                <strong>ApJ</strong> <strong>962</strong>, 102.
-                DOI: <a href="https://doi.org/10.3847/1538-4357/ad1b51" target="_blank"
-                  rel="noopener noreferrer">10.3847/1538-4357/ad1b51</a>.
-              </li>
-            </ul>
-          </section>
+          <li>
+            <em>Absorption Troughs of Lyα Emitters in HETDEX</em> — L. H. Weiss et&nbsp;al. 2024,
+            <strong>ApJ</strong> <strong>962</strong>, 102.
+            DOI: <a href="https://doi.org/10.3847/1538-4357/ad1b51" target="_blank" rel="noopener noreferrer">10.3847/1538-4357/ad1b51</a>.
+          </li>
+        </ul>
+      </section>
 
-          <section id="contact">
-            <h2>Contact</h2>
-            <p><a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a></p>
-          </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p><a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a></p>
+      </section>
 
-          <footer>
-            <p>&copy; 2025 All Rights Reserved.</p>
-          </footer>
-        </div>
-      </main>
+      <footer>
+        <p>&copy; 2025 All Rights Reserved.</p>
+      </footer>
+    </main>
 
-      <aside class="photo-card">
-        <img src="docs/photo2.jpeg" alt="Photo of Mahan Mirza Khanlari" />
-        <div class="photo-cap">UT Austin • HETDEX • CGM/IGM</div>
-      </aside>
-    </div>
+    <img src="docs/photo2.jpeg" alt="Photo of Mahan Mirza Khanlari" />
   </div>
 </body>
-
 </html>
+
+
+
+
