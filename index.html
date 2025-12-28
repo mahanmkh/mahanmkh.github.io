@@ -14,15 +14,14 @@
 
   <title>Mahan Mirza Khanlari</title>
   <meta name="description"
-    content="Mahan Mirza Khanlari — astronomy graduate student at UT Austin. HETDEX collaboration. CGM/IGM and Lyman-alpha emitter studies." />
+    content="Mahan Mirza Khanlari — second-year astronomy graduate student at UT Austin. HETDEX collaboration. CGM/IGM and LAE studies." />
 
   <style>
     :root {
-      /* Core palette */
+      /* Palette */
       --bg0: #070A14;
       --bg1: #0B1224;
       --card: rgba(255, 255, 255, 0.06);
-      --card2: rgba(255, 255, 255, 0.08);
       --border: rgba(255, 255, 255, 0.12);
 
       --fg0: rgba(255, 255, 255, 0.92);
@@ -31,7 +30,6 @@
 
       --accent: #7DD3FC;
       --accent2: #A78BFA;
-      --accent3: #FCA5A5;
 
       --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
       --radius: 18px;
@@ -56,22 +54,19 @@
       background:
         radial-gradient(900px 520px at 18% 12%, rgba(167, 139, 250, 0.18), transparent 60%),
         radial-gradient(700px 420px at 82% 18%, rgba(125, 211, 252, 0.14), transparent 60%),
-        radial-gradient(900px 520px at 55% 95%, rgba(252, 165, 165, 0.12), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       overflow-x: hidden;
     }
 
-    /* Subtle “starfield” grain */
+    /* subtle grid grain */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image:
-        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
       background-size: 42px 42px;
       opacity: 0.12;
-      filter: blur(0.1px);
     }
 
     a {
@@ -84,47 +79,36 @@
       text-underline-offset: 3px;
     }
 
-    a:focus-visible,
-    button:focus-visible {
+    a:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
       border-radius: 10px;
     }
 
+    a[target="_blank"] {
+      border-bottom: 1px dashed rgba(125, 211, 252, 0.45);
+      text-decoration: none;
+    }
+
     .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 32px 20px 56px;
+      padding: 34px 20px 56px;
       position: relative;
     }
 
-    .skip {
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      transform: translateY(-140%);
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      border-radius: 12px;
-      color: var(--fg0);
-      box-shadow: var(--shadow);
-      transition: transform 180ms ease;
-    }
-
-    .skip:focus {
-      transform: translateY(0);
-    }
-
-    /* Header / hero */
-    .hero {
+    .flex {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1.35fr 0.65fr;
       gap: 18px;
-      align-items: stretch;
-      margin-top: 12px;
+      align-items: start;
     }
 
+    main {
+      max-width: 100ch;
+    }
+
+    /* Main panel */
     .panel {
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
       border: 1px solid var(--border);
@@ -138,8 +122,8 @@
       content: "";
       position: absolute;
       inset: -2px;
-      background: linear-gradient(90deg, rgba(125, 211, 252, 0.55), rgba(167, 139, 250, 0.45), rgba(252, 165, 165, 0.40));
-      opacity: 0.22;
+      background: linear-gradient(90deg, rgba(125, 211, 252, 0.55), rgba(167, 139, 250, 0.45));
+      opacity: 0.18;
       filter: blur(18px);
       z-index: 0;
     }
@@ -150,465 +134,234 @@
       padding: 22px 22px 20px;
     }
 
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--fg1);
-      font-size: 0.95rem;
-      letter-spacing: 0.01em;
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.12);
-    }
-
-    h1 {
+    header h1 {
       font-family: Fraunces, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
       font-weight: 800;
-      line-height: 1.1;
-      margin: 10px 0 10px;
-      font-size: clamp(2.0rem, 3.6vw, 3.0rem);
       letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 6px 0 10px;
+      font-size: clamp(2.0rem, 3.6vw, 3.0rem);
     }
 
-    .subhead {
+    nav p {
+      margin: 0.25rem 0 0 0;
       color: var(--fg1);
-      max-width: 65ch;
-      margin: 0 0 14px;
-      font-size: 1.03rem;
+      font-size: 1.02rem;
     }
 
-    .meta {
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0 0;
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 10px;
-    }
-
-    .chip {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.06);
-      padding: 7px 10px;
-      border-radius: 999px;
-      color: var(--fg1);
-      font-size: 0.92rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    .chip strong {
-      color: var(--fg0);
-      font-weight: 600;
-    }
-
-    .actions {
-      display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
     }
 
-    .btn {
+    nav ul a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       padding: 11px 14px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.06);
       color: var(--fg0);
-      text-decoration: none;
       font-weight: 600;
       transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
     }
 
-    .btn:hover {
+    nav ul a:hover {
       text-decoration: none;
       background: rgba(255, 255, 255, 0.09);
       border-color: rgba(255, 255, 255, 0.18);
       transform: translateY(-1px);
     }
 
-    .btn.primary {
-      border-color: rgba(125, 211, 252, 0.35);
-      background: linear-gradient(180deg, rgba(125, 211, 252, 0.18), rgba(125, 211, 252, 0.06));
+    nav ul a:focus-visible {
+      outline: 2px solid var(--accent2);
+      outline-offset: 3px;
     }
 
-    .btn.primary:hover {
-      border-color: rgba(125, 211, 252, 0.55);
-      background: linear-gradient(180deg, rgba(125, 211, 252, 0.24), rgba(125, 211, 252, 0.08));
+    section {
+      margin-top: 1rem;
     }
 
-    /* Profile card */
-    .profile {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      min-height: 100%;
-    }
-
-    .avatar {
-      padding: 18px;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .contact-mini {
-      padding: 0 18px 18px;
-      color: var(--fg1);
-      font-size: 0.98rem;
-      display: grid;
-      gap: 10px;
-    }
-
-    .contact-mini a {
-      color: var(--fg0);
-      border-bottom: 1px dashed rgba(125, 211, 252, 0.35);
-    }
-
-    /* Sections */
-    main {
-      margin-top: 22px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-      overflow: hidden;
-    }
-
-    .card .inner {
-      padding: 18px 18px 16px;
-    }
-
-    h2 {
+    section h2 {
       font-family: Fraunces, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight: 800;
       letter-spacing: -0.01em;
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       margin: 0 0 10px;
     }
 
-    p {
-      margin: 0.55rem 0;
-      color: var(--fg1);
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .bullets {
-      margin: 10px 0 0;
-      padding-left: 1.1rem;
-      color: var(--fg1);
-    }
-
-    .bullets li {
-      margin: 0.45rem 0;
-    }
-
-    /* Featured figure */
-    figure {
+    /* Publications list */
+    #publications ul {
+      padding-left: 1.15rem;
       margin: 0;
+      color: var(--fg1);
     }
 
-    .figure-wrap {
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(0, 0, 0, 0.18);
-      padding: 14px;
-    }
-
-    .figure-wrap img {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.04);
-      display: block;
-    }
-
-    figcaption {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    /* Publications */
-    .pubs {
-      display: grid;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .pub {
-      padding: 14px 14px 12px;
+    #publications li {
+      margin: 0.8rem 0;
+      padding: 12px 14px;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.10);
     }
 
-    .pub-title {
+    #publications em {
+      color: var(--fg0);
+      font-style: italic;
+    }
+
+    #publications strong {
       color: var(--fg0);
       font-weight: 700;
-      margin: 0 0 6px;
     }
 
-    .pub-meta {
+    /* Contact */
+    #contact p {
+      margin: 0.6rem 0 0;
+      font-size: 1.02rem;
+      color: var(--fg1);
+    }
+
+    /* Right-side photo card */
+    .photo-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: sticky;
+      top: 18px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+    }
+
+    .photo-cap {
+      padding: 14px 16px;
       color: var(--muted);
-      margin: 0;
-      font-size: 0.97rem;
-    }
-
-    .pub-links {
-      margin-top: 8px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--fg0);
-      font-weight: 600;
-      font-size: 0.92rem;
-      text-decoration: none;
-    }
-
-    .pill:hover {
-      text-decoration: none;
-      border-color: rgba(125, 211, 252, 0.35);
-      background: rgba(125, 211, 252, 0.08);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 26px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
       font-size: 0.95rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(0, 0, 0, 0.16);
+    }
+
+    footer {
+      margin-top: 1.6rem;
+      opacity: 0.9;
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
     }
 
     /* Responsive */
     @media (max-width: 920px) {
-      .hero {
+      .flex {
         grid-template-columns: 1fr;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .photo-card {
+        position: static;
       }
 
-      .avatar img {
+      img {
         aspect-ratio: 16 / 10;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-
-      .btn,
-      a {
-        transition: none !important;
+    @media (max-width: 720px) {
+      img {
+        display: none;
       }
 
-      body::before {
-        opacity: 0.09;
+      .photo-cap {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      nav ul a {
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-
   <div class="wrap">
-    <!-- HERO -->
-    <header class="hero" aria-label="Site header">
-      <section class="panel" aria-label="Intro panel">
+    <div class="flex">
+      <main class="panel">
         <div class="panel-inner">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span> Astronomy • CGM/IGM • Spectral stacking</div>
-          <h1>Mahan Mirza Khanlari</h1>
-          <p class="subhead">
-            Graduate student in astronomy at
-            <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer">The University of Texas at Austin</a>,
-            working in the <a href="https://hetdex.org/" target="_blank" rel="noopener noreferrer">HETDEX</a> collaboration.
-          </p>
+          <header>
+            <h1>Mahan Mirza Khanlari</h1>
+            <nav>
+              <p>
+                Second-year astronomy graduate student at
+                <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer">The University of Texas at
+                  Austin</a> |
+                <a href="https://hetdex.org/" target="_blank" rel="noopener noreferrer">HETDEX</a>
+              </p>
+              <ul>
+                <li><a href="docs/CV.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a></li>
+                <li><a href="https://github.com/mahanmkh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+            </nav>
+          </header>
 
-          <div class="meta" role="list" aria-label="Quick facts">
-            <span class="chip" role="listitem"><strong>Focus:</strong> LAEs, neutral H&nbsp;I, CGM/IGM</span>
-            <span class="chip" role="listitem"><strong>Method:</strong> stacking millions of fiber spectra</span>
-            <span class="chip" role="listitem"><strong>Redshift:</strong> z ≈ 2–3.5</span>
-          </div>
-
-          <div class="actions" aria-label="Primary links">
-            <a class="btn primary" href="docs/CV.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
-            <a class="btn" href="https://github.com/mahanmkh" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </div>
-      </section>
-
-      <aside class="panel profile" aria-label="Profile panel">
-        <div class="avatar">
-          <img src="docs/photo2.jpeg" alt="Photo of Mahan Mirza Khanlari" />
-        </div>
-        <div class="contact-mini">
-          <div class="muted">Contact</div>
-          <div>
-            <a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a>
-          </div>
-          <div class="muted">Austin, TX • UT Austin</div>
-        </div>
-      </aside>
-    </header>
-
-    <main id="content" aria-label="Main content">
-      <div class="grid">
-        <!-- RESEARCH -->
-        <section class="card" aria-label="Research section">
-          <div class="inner">
-            <h2>Research</h2>
-            <p>
-              I study how neutral hydrogen is distributed around high-redshift galaxies, and what that tells us about
-              galaxy environments and the baryon cycle. In my recent work, I use HETDEX/VIRUS fiber spectra to detect
-              extremely faint Lyα absorption imprinted on the integrated light of background galaxies.
-              :contentReference[oaicite:1]{index=1}
-            </p>
-
-            <ul class="bullets">
+          <section id="publications">
+            <h2>PUBLICATIONS</h2>
+            <ul>
               <li>
-                Stack millions of spectra in annuli around <span class="muted">~88,000</span> high-confidence LAEs to boost S/N.
-                :contentReference[oaicite:2]{index=2}
+                <em>The HETDEX Survey: Probing Neutral Hydrogen in the Circumgalactic Medium of &sim;88,000 Lyman Alpha
+                  Emitters</em> — M. Mirza Khanlari et&nbsp;al 2025.
+                <strong>ApJ</strong> <strong>989</strong>, 169.
+                DOI: <a href="https://doi.org/10.3847/1538-4357/adf10e" target="_blank"
+                  rel="noopener noreferrer">10.3847/1538-4357/adf10e</a>.
               </li>
+
               <li>
-                Detect Lyα absorption statistically out to <span class="muted">~350 kpc</span> and measure an empirical radial
-                equivalent-width profile. :contentReference[oaicite:3]{index=3}
+                <em>Using Lyα Absorption to Measure the Intensity and Variability of z &sim; 2.4 Ultraviolet Background
+                  Light</em> — L. H. Weiss et&nbsp;al. 2025,
+                <strong>ApJ</strong> <strong>983</strong>, 72.
+                DOI: <a href="https://doi.org/10.3847/1538-4357/adc0f9" target="_blank"
+                  rel="noopener noreferrer">10.3847/1538-4357/adc0f9</a>.
               </li>
+
               <li>
-                Compare the observed profile to forward-modeled hydrodynamical simulations (ASTRID) to connect the signal
-                to CGM/IGM H&nbsp;I structure. :contentReference[oaicite:4]{index=4}
-              </li>
-              <li>
-                Ongoing direction: quantify how the profile changes with redshift, Lyα luminosity, and local density.
-                :contentReference[oaicite:5]{index=5}
+                <em>Absorption Troughs of Lyα Emitters in HETDEX</em> — L. H. Weiss et&nbsp;al. 2024,
+                <strong>ApJ</strong> <strong>962</strong>, 102.
+                DOI: <a href="https://doi.org/10.3847/1538-4357/ad1b51" target="_blank"
+                  rel="noopener noreferrer">10.3847/1538-4357/ad1b51</a>.
               </li>
             </ul>
-          </div>
+          </section>
 
-          <figure class="figure-wrap" aria-label="Featured figure">
-            <!-- Replace with Figure 8 from the paper: radial Wλ(Lyα) profile (data vs ASTRID) -->
-            <img src="docs/picture.png"
-              alt="Featured plot placeholder: radial Lyα equivalent-width profile around HETDEX LAEs (replace with Figure 8 from the paper)" />
-            <figcaption>
-              Featured result (suggested): <strong>Figure 8</strong> from the paper — the bias-corrected radial
-              <em>W</em><sub>λ</sub>(Lyα) profile around an average HETDEX LAE (and the ASTRID comparison).
-              :contentReference[oaicite:6]{index=6}
-            </figcaption>
-          </figure>
-        </section>
+          <section id="contact">
+            <h2>Contact</h2>
+            <p><a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a></p>
+          </section>
 
-        <!-- PUBLICATIONS -->
-        <section class="card" aria-label="Publications section">
-          <div class="inner">
-            <h2>Publications</h2>
-
-            <div class="pubs">
-              <article class="pub">
-                <p class="pub-title">
-                  <em>The HETDEX Survey: Probing Neutral Hydrogen in the Circumgalactic Medium of &sim;88,000 Lyman Alpha Emitters</em>
-                </p>
-                <p class="pub-meta">
-                  M. Mirza Khanlari et&nbsp;al. (2025) — <strong>ApJ</strong> <strong>989</strong>, 169.
-                </p>
-                <div class="pub-links">
-                  <a class="pill" href="https://doi.org/10.3847/1538-4357/adf10e" target="_blank" rel="noopener noreferrer">DOI: 10.3847/1538-4357/adf10e</a>
-                </div>
-              </article>
-
-              <article class="pub">
-                <p class="pub-title">
-                  <em>Using Lyα Absorption to Measure the Intensity and Variability of z &sim; 2.4 Ultraviolet Background Light</em>
-                </p>
-                <p class="pub-meta">
-                  L. H. Weiss et&nbsp;al. (2025) — <strong>ApJ</strong> <strong>983</strong>, 72.
-                </p>
-                <div class="pub-links">
-                  <a class="pill" href="https://doi.org/10.3847/1538-4357/adc0f9" target="_blank" rel="noopener noreferrer">DOI: 10.3847/1538-4357/adc0f9</a>
-                </div>
-              </article>
-
-              <article class="pub">
-                <p class="pub-title">
-                  <em>Absorption Troughs of Lyα Emitters in HETDEX</em>
-                </p>
-                <p class="pub-meta">
-                  L. H. Weiss et&nbsp;al. (2024) — <strong>ApJ</strong> <strong>962</strong>, 102.
-                </p>
-                <div class="pub-links">
-                  <a class="pill" href="https://doi.org/10.3847/1538-4357/ad1b51" target="_blank" rel="noopener noreferrer">DOI: 10.3847/1538-4357/ad1b51</a>
-                </div>
-              </article>
-            </div>
-
-            <p class="muted" style="margin-top: 12px;">
-              (If you want, you can add ADS links for each entry later in the same “pill” style.)
-            </p>
-          </div>
-        </section>
-      </div>
-
-      <!-- CONTACT (full) -->
-      <section class="card" aria-label="Contact section" style="margin-top: 18px;">
-        <div class="inner">
-          <h2>Contact</h2>
-          <p>
-            Email: <a href="mailto:mahanmkh@utexas.edu">mahanmkh@utexas.edu</a>
-          </p>
-          <p class="muted">
-            For collaborations/questions related to HETDEX stacking analyses, CGM/IGM absorption, or LAE environments, feel free to reach out.
-          </p>
+          <footer>
+            <p>&copy; 2025 All Rights Reserved.</p>
+          </footer>
         </div>
-      </section>
+      </main>
 
-      <footer aria-label="Footer">
-        <div>&copy; 2025 All Rights Reserved.</div>
-        <div class="muted">Built as a single static HTML page (fast + GitHub Pages friendly).</div>
-      </footer>
-    </main>
+      <aside class="photo-card">
+        <img src="docs/photo2.jpeg" alt="Photo of Mahan Mirza Khanlari" />
+        <div class="photo-cap">UT Austin • HETDEX • CGM/IGM</div>
+      </aside>
+    </div>
   </div>
 </body>
 
